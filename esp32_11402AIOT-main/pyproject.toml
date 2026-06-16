@@ -1,0 +1,10 @@
+[project]
+name = "esp32-micropython-project"
+version = "0.1.0"
+description = "ESP32 MicroPython project using VS Code, uv, mpremote, and esptool"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "esptool",
+    "mpremote",
+]

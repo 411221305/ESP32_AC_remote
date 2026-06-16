@@ -1,0 +1,58 @@
+substitutions:
+  devicename: esp32-hitachi-ac344
+  friendly_name: ESP32 Hitachi AC344
+
+esphome:
+  name: ${devicename}
+  friendly_name: ${friendly_name}
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+logger:
+
+web_server:
+  port: 80
+
+api:
+
+ota:
+  - platform: esphome
+
+wifi:
+  ssid: "YOUR_WIFI_SSID"
+  password: "YOUR_WIFI_PASSWORD"
+  ap:
+    ssid: ${devicename}
+    password: "12345678"
+
+captive_portal:
+
+remote_transmitter:
+  id: ir_tx
+  pin: GPIO25
+  carrier_duty_percent: 50%
+
+remote_receiver:
+  id: ir_rx
+  pin:
+    number: GPIO33
+    inverted: true
+    mode:
+      input: true
+      pullup: true
+  tolerance: 55%
+
+climate:
+  - platform: hitachi_ac344
+    name: "Hitachi AC344"
+    transmitter_id: ir_tx
+    receiver_id: ir_rx
+    visual:
+      min_temperature: 16
+      max_temperature: 32
+      temperature_step: 1
+    supports_cool: true
+    supports_heat: true

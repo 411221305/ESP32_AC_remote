@@ -1,0 +1,21 @@
+LED_BUILTIN = 2
+
+BUTTON_A = 5
+BUTTON_B = 36
+
+LED_RED = 16
+LED_YELLOW = 12
+LED_GREEN = 13
+
+NEOPIXEL = 26
+DHT11 = 15
+LIGHT_ADC = 39
+POT_ADC = 34
+BUZZER = 14
+RELAY = 25
+
+OLED_SDA = 21
+OLED_SCL = 22
+
+# Confirm this with the expansion board printing before use.
+IR_RECEIVER = 35
